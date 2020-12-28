@@ -1,6 +1,13 @@
-Server is a main computer
+Exercise
 
-_server is transfer data
-_client is retrieve data
+9. CPU address bus = 8bit
+=> Start = 00000000, End = 11111111, មានទំហំRam = 256byte
+
+
+8. Convert Hexa To Binary (Count 8digit = 1byte)
+_456C = 0100 0101 0110 1100, 2bytes 
+_384FCDE1 = 0011 1000 0100 1111 1100 1101 1110 0001, 4bytes
+
+|*Dword(double word) = 16bit* | 
 
 
