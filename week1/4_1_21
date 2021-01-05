@@ -1,9 +1,0 @@
-Lesson X86 Microprocessor Architector( CPU architecture)
-
-* Intel 8086 Architecture
-+ តួនាទី
-- BIU = មាន instruction Queue and Segment Rgisters ដែលផ្ទុក Instruction Queue ក្នុងCode
-
-* Assembly language
-- ជាភាសាកំរិតទាបដោយប្រើ "Instruction, Register, Method" សរសេរវាដើម្បើដំណើរការផ្នែករឹង(Drive, Owner OS, Hardware)។
-- 
