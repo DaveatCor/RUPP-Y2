@@ -4,36 +4,6 @@
 #include<stdlib.h>
 using namespace std;
 
-void whileFactorial(int n, long *factorial){
-	int temp;
-	int i = 1;
-	while(i <= n) {
-		temp = 1;
-		int j = 1;
-		while (j <= i){
-			temp *= j;
-			j++;
-		}
-		*factorial += temp;
-		i++;
-	}
-}
-
-void dowhileFactorial(int n, long *factorial){
-	int temp;
-	int i = 1;
-	do {
-		temp = 1;
-		int j = 1;
-		do {
-			temp *= j;
-			j++;
-		} while(j <= i);
-		*factorial += temp;
-		i++;
-	}while(i <= n);
-}
-
 int Sum1(int n){
 	int factorial;
 	int temp;
