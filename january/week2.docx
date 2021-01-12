@@ -1,3 +1,9 @@
+﻿1.5 TABLE CHARACTERISTRICS
+
+------------------------------------------------
+
+Date: 11/1/2021
+
 Title:
 .586
 .model flat, stdcall
@@ -20,3 +26,5 @@ start:
 		
 Ret
 end start
+
+
