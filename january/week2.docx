@@ -2,34 +2,19 @@
 
 ------------------------------------------------
 
-Date: 11/1/2021
+Date: 13/1/2021
 
-Title:
-.586
-.model flat, stdcall
-include masm32rt.inc
-Include debug.inc
-Includelib debug.lib
-;
-.Data
-	x	DW		1234h;
-	y	DW		5678h;
-	r  	DW		0
+4. ហៅ Function មកប្រើ
 
-.Code
-start:
-		; r = x+y
-		mov bx; x
-		mov cx, y
-		add  cx, bx
-		PrintHex cx
-		
-Ret
-end start
+បង្កើតអនុគមនមាន៤រៀប:
+- Datatype with parameter
+- Datatype without parameter
+- No Datatype with parameter
+- No Datatype without parameter
 
-------------------------------------------------
+10. Overload function
 
-Date: 12/1/2021
+ជាFunction ចាប់់ពី២ឡើងទៅហើយមានឈ្មោះដូចគ្នាតែចំនួន Parameter ខុសគ្នា
 
 
 
