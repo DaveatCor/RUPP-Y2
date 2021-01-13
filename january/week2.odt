@@ -1,0 +1,18 @@
+﻿Date: 12/Jan/2021
+
+5-Functions:
+6-Function manipulators:
++ endl: ចុះបន្ទាត់
++ dec:
++ oct:
++ hex:
++ setbase():, 10, 8, 16
++ setw():
++ setfill():
++ setprecision():
++ setiosflags():
+	- right:…..
+	- left:
+	- dec:
+	- oct:
+	- hex:
