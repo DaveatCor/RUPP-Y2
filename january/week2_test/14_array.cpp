@@ -17,6 +17,7 @@ void output(float a[], int n){
 
 int main(){
 	float x[100]; // without initialze size => x[] = {34, 78, 92, 16, 29, 55, 15};
+	// Scientific	
 	int n;
 	cout<<"Number of elements: "; cin>>n;
 	input(x, n);
