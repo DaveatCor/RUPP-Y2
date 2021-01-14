@@ -1,11 +1,11 @@
-﻿Date: 12/Jan/2021
+﻿Date: Tuesday 12/Jan/2021
 
 5-Functions:
 6-Function manipulators:
 + endl: ចុះបន្ទាត់
-+ dec:
-+ oct:
-+ hex:
++ dec: Convert integer to decimal (គោល10)
++ oct: Convert integer to octal(គោល8)
++ hex: Convert integer to hexadecimal(គោល8)
 + setbase():, 10, 8, 16
 + setw():
 + setfill():
@@ -16,3 +16,52 @@
 	- dec:
 	- oct:
 	- hex:
+
+-------------------------------------
+Date: Thursday 14/Jan/2021
+
+8. Arrays: List
+
+- ផ្ទុកDataបានច្រើន
+- Datatype ត្រូវដូចគ្នា
+- array ជា Pointer
+- remain index in array its value equal 0
+
+ i- Declaration:
+	float a[100];
+	int b[73];
+ a- Initialization:
+	float a[7]={45, 27, 83, 16, 72, 63, 35};
+	float a[10]={45, 27, 83, 16, 72, 63, 35}; remain value 3 amount so it becomes default value equal 0
+
+ b- Input:
+
+ - array ជា reference parameter = Pointer
+
+ void input(float a[], int n){ 
+ 	for (int i=0; i<n; i++){
+		cout<<”………………”;
+		cin>>a[i];
+	}
+ }
+
+ c- Output:
+ void output(float a[], int n){
+	for (int i=0; i<n; i++){
+		cout<<a[i]<<”\t\t”;
+	} 
+ }
+
+ *No address but display data = scientific: 
+ *Have address And Have no data but display data = value equal 0
+
+ iii- Sum of all elements:
+ iv- Max of all elements:
+ v- Sort:
+ vi- Search: លទ្ធផលបានIndex
+
+
+ 
+
+ 
+	 
