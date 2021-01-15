@@ -1,0 +1,81 @@
+﻿Date: Thursday 14/Jan/2021
+
+Chapter1:
+
+1.5.1 Keys
+
+តំលៃជាអែកតាជាតំលៃមិនស្ទូន
+
+- Super key = attribute 1 (A, B, C) or បន្សំ (D+E, F+G+H) 
+
+- Candidate key = ជាsuper key ដែលតូចជាងគេនិងតែមួយៗ (A, B, C) and (D+E, F+G+H) មិនមែនជាCandidate keyទេព្រោះកើតឡើងដោយការរួមបញ្ចូលគ្នា
+
+- primary key = ជា candidate key មិនស្ទួន មិនទទេរ មិនប្រែែប្រូល មិនវែងពេក (StudentID) should use
+ 
+- secondary key = ជា attribute ដែលកំណត់អត្តសញ្ញាណទីពីណាដែលយើងប្រើបន្ទាប់ primary key 
+example: name, email, or phone number
+
+- All foreign key(child) must have inside primary key(parent)
+
+*Attribute is row
+
+-------------------------------------------------------------------
+Date: Thursday 14/Jan/2021
+
+Chapter2: Basic Data Definition Language
+
+1.6 STRUCTURE QUERY LANGUAGE
+
+- DDL(Data Definition Language) Computer language use for create Tables, Relationship between Table and Table.
+
+Syntax:
+
+CREATE TABLE table_Name(
+	Column1 Data_Type1 Field_Size [col_constraint1],
+	Column2 Data_Type2 Field_Size [col_constraint2],
+)
+
+*Constraint we use to 
+
+- DML(Data Manipulation Language)
+
+- DCL(Data Control Language)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Only char and String that have field size
