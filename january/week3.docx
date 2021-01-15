@@ -1,0 +1,22 @@
+﻿
+Chapter 2: Recursive and Recursive Algorithms
+
+Contents
+
+1. Definition ជាទ្រង់ទ្រាយទាំងឡាយណាដែលបានកើតឡើងក្រោមទ្រង់ទ្រាយរបស់ខ្លួន ឬជាទ្រង់ទ្រាយរួមមានខ្លួនវានៅក្នុងនោះផងដរ
+
+if we want to find 4! we need to find 3! first
+
+--| |------------------- X we need to find Y first
+
+2. Recursive Algorithm
+To solve recursive we have 2 approach
+- ដំណាក់កាលវីភាគ
+- ដំណាក់កាលបញ្ច្រាស់
+3. Recursive function
+
+
+
+
+
+
