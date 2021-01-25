@@ -3,26 +3,16 @@
 using namespace std;
 
 
-//float factorial(int n){
-//	if (n == 1) return 1;
-//	return n*factorial(n-1);
-//}
-//
-//float findEachFact(int n){
-//	float result;
-//	for (int i = 1; i<= n; i++){
-////		Execute Factorial
-//		result += factorial(i);
-//	}
-//}
+float factorial(int n){
+	if (n == 1) return 1;
+	return n*factorial(n-1);
+}
 
-int fibonanci(int n, int c){
+int fibonanci(int n){ // Not yet understand
 	if (n == 1 || n==2){
-		cout<<"Hello "<< c<<endl<<endl;
 		return (1);
 	}else {
-		cout<<"Fibonanci"<<fibonanci(n-1, n-1);
-		return (fibonanci(n-1, n-1) + fibonanci(n - 2, n-2));
+		return (fibonanci(n-1) + fibonanci(n - 2));
 	}
 }
 
@@ -33,22 +23,20 @@ int sum(int n){
 	}
 }
 
-int AandN(int n, int a){
-	if (n == 1) return n;
+int AandN(int a, int n){
+	if (n == 1) return a;
 	else {
-		a = n * AandN(n-1, a);
-		cout<<"A= "<<a<<endl;
-//		return n * AandN(n-1);
+		return a * AandN(a, n-1);
 	}
 }
 
 int main(){
-	int n =3; int a = 1; int fact;
+	int n = 3; int a = 2; int fact;
 	cout<<"Factorial\n";
 //	cin>>n;
 //	fact = findEachFact(n);
 //	fact = fibonanci(n, n);
-	fact = AandN(n, a);
+	fact = AandN(a, n);
 	cout<<"My factorial: "<<fact;
 	getch();
 }
