@@ -1,0 +1,7 @@
+4- Input and out
+
+*Note: string:(fflush(stdin))
+Ex: char name[20];
+cin.clear(); cin.seekg(0, ios::end);
+cin.get(name, 20);
+:: is scope operator
