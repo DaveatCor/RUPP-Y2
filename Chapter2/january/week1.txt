@@ -1,0 +1,46 @@
+Date: 4/1/2021           *Computer Architector*
+
+
+Lesson X86 Microprocessor Architector( CPU architecture)
+
+* Intel 8086 Architecture
++ តួនាទី
+- BIU = មាន instruction Queue and Segment Rgisters ដែលផ្ទុក Instruction Queue ក្នុងCode
+
+* Assembly language
+- ជាភាសាកំរិតទាបដោយប្រើ "Instruction, Register, Method" សរសេរវាដើម្បើដំណើរការផ្នែករឹង(Drive, Owner OS, Hardware)។
+
+-----------------------------------------------------
+
+Date: 5/1/2021
+
+Teacher ask:
+Computer is a electronic tools for input output retrieve execute and emit data
+
+Computer architecture គឺជាសំណុំ និងវិធីសាស្រ្ត ពិពណនានៃTools អោយស្គាល់ឈ្មោះនិងអនុវត្តដំណើរការធ្វើអ្វី១
+---------------------------------X--------------------------------
+
+Continues: 5/1/2021
+
+
+1.1.2 Base register
+
+BX = 16bits, BH=8bits and BL = 8bits
+
+-----
+
+2.Instruction ជាពាក្យបញ្ជាប្រាប់CPUធ្វើអ្វី១
+
+CL AL = 1bytes
+CL in CX, AL in AX
+
+CL = តំលៃ AL
+
+mov ax, 1234h = អោយតំលៃax ស្មើ1234h
+
+ធ្វើប្រមាណវិធី:
+-add ax, dx
+
+----------------------------------------------------
+
+ 
