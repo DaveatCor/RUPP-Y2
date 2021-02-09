@@ -6,10 +6,13 @@
 using namespace std;
 
 class Rectangle{
+	
+	//	Member Variable Or Field
 	private:
 		float length;
 		float width;
 	
+	// Member Function
 	public:
 		void input(){
 			cout<<"Input length: "; cin>>length;
@@ -26,6 +29,17 @@ class Rectangle{
 			return length*width;
 		}
 		
+		// Accesser
+		float getLength() { return length;}
+		float getWidth() { return width;}
+		void setLength(float l){
+			length = l;
+		}
+		
+		void setWidth(float w){
+			width = w;
+		}
+		
 };
 
 int main(){
@@ -34,6 +48,7 @@ int main(){
 	
 	rec.input();
 	rec.output();
+	cout<<endl<<rec.getLength();
 	
 	getch();
 } 
