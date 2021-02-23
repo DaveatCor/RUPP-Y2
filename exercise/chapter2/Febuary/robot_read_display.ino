@@ -33,7 +33,6 @@ void loop()
 		else if (input == 'l'){
 			Serial.println("Robot go left");
 		}
-		//Serial.print("I received ");
-		//Serial.println(incomingByte, HEX);
+		Serial.println(input, HEX);
 	}
 }
