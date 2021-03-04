@@ -1,35 +1,36 @@
-//Date 25/Feb/21
-//6.Inner class or neted class
+//Date 04/Mar/21
+//Design Container Class
 
 #include<iostream>
 #include<conio.h>
 #include<math.h>
 using namespace std;
 
+class Point{
+	private: 
+		double x;
+		double y;
+	public:
+		void input(){
+			cout<<"Input x: "; cin>>x;
+			cout<<"Input y: "; cin>>y;
+		}
+		
+		void output(){
+			cout<<"("<<x<<", "<<y<<")"<<endl;
+		}
+		float distance(Point p){
+			float d;
+			d = sqrt( (x-p.x) * (x-p.x) + (y-p.y)*(y-p.y));
+			return d;
+		}
+		
+};
 
 class Circle{
 	
 	public:
-		class Point{
-			private: 
-				double x;
-				double y;
-			public:
-				void input(){
-					cout<<"Input x: "; cin>>x;
-					cout<<"Input y: "; cin>>y;
-				}
-				
-				void output(){
-					cout<<"("<<x<<", "<<y<<")"<<endl;
-				}
-				float distance(Point p){
-					float d;
-					d = sqrt( (x-p.x) * (x-p.x) + (y-p.y)*(y-p.y));
-					return d;
-				}
-				
-		};
+		
 		void input(){
 			p.input();
 			cout<<"Input radius: "; cin>> r;
