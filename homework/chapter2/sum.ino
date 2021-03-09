@@ -17,9 +17,9 @@ void loop()
 		if(i < 5){
 			array[i] = Serial.parseInt();
 			sum += array[i];
-			Serial.println(i);
+			Serial.println(array[i]);
 			i++;
-			
+
 			if (i == 5) {
 				Serial.print("Sum= "); Serial.println(sum);
 			}

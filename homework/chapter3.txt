@@ -1,0 +1,105 @@
+Ouk Polyvann, [01.03.21 20:27]
+Microprocessor(Lesson 3) and Microcontroller(Lesson 4)(M4,
+=================================================================
+I. Write the program in UnoArduSim to :
+1. Adds two number ;r = x + y ; 
+ -x=10 and y=20 input in code
+ -x and y input when run code
+  Serial.print(r)(7)
+
+2. Find Average of math, english, khmer, C(Group6)
+ - math=5.4, english=8, khmer=7.25, C=9 
+ - math, english, khmer, C input when we run the program (6)
+
+3. Uses two function :
+   -Serial.available() function to send a byte from serial monitor
+   to  Serial  buffer of ATMEGA328 '
+     - Serial.read () to gets the value incomming  and stores its in read_byte
+Output :I am Arduino received your data:(5)
+
+4.Blinking a Led (4) 
+
+5.Uses serial monitor to send :(3)
+- 1 to turn on a led13 
+- 0 to turn off a led13 
+
+6.Uses function :
+  -Serial.write() to sends 58h  to Serial monitor
+  -Serial.Write() to string " Labs Robotics 004 Building C  " to serial monitor
+to Serial Monitor(2)
+
+7.Use serial monitor to send:(1)
+  -f shows "robot go forward"
+  -b shows "robot turn back"
+  -l shows "robot turn left"
+  -r shows "robot turn right"
+  
+8. Press Push button to Turn on led and release button to turn off led(0)
+
+II. Assignment 2 of lesson 2 (assembly and UnoArduSim )
+    Group1
+  -displays : "Hello Rupp" on LCD
+  -sum =1+2+3+...+n  ;in assembly and Arduino programming 
+  Group2
+  -displays : "Hello Rupp" on LCD
+    -Asignment 2:3 exercise
+  Group3
+    -displays : "Hello Rupp" on LCD
+    -using lcd.autoscroll to scrolls text from right to left(3)
+  Group4
+    -displays : "Hello Rupp" on LCD
+    -Asignment 2:4
+  Group5
+    -displays : "Hello Rupp" on LCD
+    -Asignment 2:5
+  Group6
+    -displays : "Hello Rupp" on LCD
+    -Asignment 2 :6
+  Group7
+    --displays : "Hello Rupp" on LCD
+    -Assignment:make calculator (7)
+
+
+III. Assignment 4 UnoArduSim do by Group
+    Group 7 :
+  - Press Push button to Turn on led4 
+  - release button to turn off led4
+  Group 6 :
+  Uses serial monitor to send :
+  - 1 to turn on LED4 at pin 10 
+  - 0 to turn off LED4 pin 10 
+    Group 5:
+    -When  press button  1  to blingkin LED4 from right to left
+    -When  press button  1  to blingkin LED4 from left to right
+    Group4
+    1.displays : " I am a students IT " on Serial Monitor(Rx)
+    2.sum =1+3+5+...+ 2n-1 ;input n from serial monitor
+    //input n
+    while(Serial.available==0){}
+    n=Serial.parseInt();
+    Group3
+    1.Scrolls text from left to right : "Hello Rupp" on LCD
+    2.Use butto1 to select menu down  and button2 select menu up on LCD 16x2
+      Add two number
+      Sub two number
+      Mul two number 
+      Div two number
+    Group2 :
+    1.Scrolls text from right to left : "Hello Rupp" on LCD
+    2.Write a program Converts “Arduino And Assembly Language" to Upper case ,using
+    myString.toUpperCase() ; String myString = "Arduino And Assembly Language":
+    
+    Group 1:
+    1.displays : "Arduino Programming is fun" on LCD ;
+    2.Assignment:make calculator 
+    - Enter a x: 10 (input from serial monitor)
+    - Select(+,-,*,/):+
+    - Enter n y: 20
+    Group 8:Use 20x4 LCD to do operation : 
+    1. input data uses Serial Monitor
+    - Enter a x: 10 
+    - Select(+,-,*,/):+
+    - Enter n y: 20 
+    2.Output use LCD : the result of Adds two number is 30
+    ***Bonnus Exercise**
+    Select menu(On Lcd 16x2): 
