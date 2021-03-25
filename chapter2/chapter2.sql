@@ -9,7 +9,7 @@ Use Chapter2
 -- )
 
 -- ALTER TABLE Toys
--- ADD PRIMARY KEY (ToyID)
+-- ADD PRIMARY KEY (ToyID);
 
-SELECT * 
-FROM Toys
+-- ALTER TABLE Toys
+-- ALTER COLUMN ToyID INTEGER NOT NULL
