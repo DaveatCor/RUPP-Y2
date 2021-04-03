@@ -8,8 +8,8 @@ CREATE TABLE Toys(
     Description CHAR(30)
 )*/
 
-/*3.1.1 inserting records*/
 
+/*3.1.1 inserting records*/
 -- INSERT INTO Toys
 -- VALUES (1, 'ToyTrain1', 11.0, 'Red/blue battery'), 
 -- (2, 'ToyTrain2', 11.0, 'Green/red/blue battery'),
@@ -20,7 +20,6 @@ CREATE TABLE Toys(
 -- (7, 'Doll/TownHouse', 15.00, 'Grand Town')
 
 /* 3.1.1 Copying Records from One Table to an Existing Table */
-
 -- CREATE TABLE ToysTest(
 --     ToyID INTEGER CONSTRAINT ToyPK PRIMARY KEY,
 --     ToyName CHAR(20) NOT NULL,
@@ -31,3 +30,14 @@ CREATE TABLE Toys(
 -- INSERT INTO ToysTest
 -- SELECT ToyID, ToyName, PRICE, Description
 -- FROM Toys
+
+-- /* 3.2 Updating records */ -- Use to update data inside Table
+-- UPDATE ToysTest
+-- SET Description = 'Doll Town' 
+-- WHERE ToyID = 7
+
+
+/* 3.2.2 Update a Record with a New Calculated Value */
+-- UPDATE ToysTest
+-- SET Price = Price + 5
+-- WHERE ToyID = 1
