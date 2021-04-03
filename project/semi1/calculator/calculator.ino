@@ -41,7 +41,7 @@ void setup() {
   Serial.begin(9600);
   
   //lcd
-  analogWrite(6, 20);
+  analogWrite(6, 70);
   lcd.begin(16, 2);
   
   lcd.setCursor(0, 0);
