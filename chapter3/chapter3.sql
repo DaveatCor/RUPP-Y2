@@ -41,3 +41,28 @@ CREATE TABLE Toys(
 -- UPDATE ToysTest
 -- SET Price = Price + 5
 -- WHERE ToyID = 1
+
+
+-- 08/Apr/21
+
+/* 3.2.3 Update Multiple Columns */
+-- UPDATE ToysTest
+-- SET ToyName = 'MyToy', Price = 15, Description = 'Blue'
+-- WHERE ToyID = 1
+
+/* 3.2.4 Update a Column that Contains a Date */
+
+-- CREATE Table Sale(
+--     SaleID INTEGER PRIMARY KEY,
+--     ProductID CHAR (30) NOT NULL,
+--     CommentID INTEGER NOT NULL,
+--     DateSold DATETIME
+-- )
+
+-- INSERT INTO Sale
+-- VALUES (2, 'CT200', 3, '2/5/2008')
+
+-- UPDATE Sale
+-- SET DateSold = '3/3/2008'
+-- WHERE SaleID = 1
+
