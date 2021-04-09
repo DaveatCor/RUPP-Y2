@@ -66,3 +66,41 @@ CREATE TABLE Toys(
 -- SET DateSold = '3/3/2008'
 -- WHERE SaleID = 1
 
+
+-- 08/Apr/21
+
+/* 3.3 DELETING RECORDS */
+
+-- DELETE FROM Sale
+-- WHERE SaleID = 10 AND ProductID = 'BN200'
+
+/* 3.4 SQL Transaction */
+/* 3.4.1 COMMIT TRANSACTION */
+
+-- CREATE TABLE Employee(
+--     EmpID INTEGER PRIMARY KEY NOT NULL,
+--     FirstName CHAR(20) NOT NULL,
+--     LastName CHAR(20) NOT NULL,
+--     Education CHAR(20) NOT NULL,
+--     Occupation CHAR(20) NOT NULL,
+--     YearlyIncome CHAR(20) NOT NULL,
+--     Sales INTEGER NOT NULL
+-- )
+
+-- GO
+
+-- BEGIN TRANSACTION
+
+-- INSERT INTO Employee
+-- VALUES(7, 'SQL2', 'SERVER2', 'Education2', 'Teaching2', 10000, 200)
+
+-- UPDATE Employee
+-- SET [Education] = 'Tutorial', YearlyIncome = 98000
+-- WHERE EmpID = 7 AND YearlyIncome = 500000
+
+-- SELECT *
+-- FROM Employee
+
+-- COMMIT TRANSACTION
+
+
