@@ -87,20 +87,18 @@ CREATE TABLE Toys(
 --     Sales INTEGER NOT NULL
 -- )
 
--- GO
-
--- BEGIN TRANSACTION
+BEGIN TRANSACTION
 
 -- INSERT INTO Employee
--- VALUES(7, 'SQL2', 'SERVER2', 'Education2', 'Teaching2', 10000, 200)
+-- VALUES(5, 'SQL', 'SERVER', 'Education', 'Teaching', 10000, 200)
 
--- UPDATE Employee
--- SET [Education] = 'Tutorial', YearlyIncome = 98000
--- WHERE EmpID = 7 AND YearlyIncome = 500000
+UPDATE Employee
+SET [Education] = 'Tutorial', YearlyIncome = 10000
+WHERE EmpID = 5 AND Sales =     300
 
--- SELECT *
--- FROM Employee
+SELECT *
+FROM Employee
 
--- COMMIT TRANSACTION
+COMMIT TRANSACTION
 
 
