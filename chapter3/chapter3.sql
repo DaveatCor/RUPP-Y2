@@ -1,4 +1,4 @@
-USE Chapter3
+USE Year2
 
 /*
 CREATE TABLE Toys(
@@ -87,18 +87,18 @@ CREATE TABLE Toys(
 --     Sales INTEGER NOT NULL
 -- )
 
-BEGIN TRANSACTION
+-- BEGIN TRANSACTION
 
--- INSERT INTO Employee
--- VALUES(5, 'SQL', 'SERVER', 'Education', 'Teaching', 10000, 200)
+-- -- INSERT INTO Employee
+-- -- VALUES(5, 'SQL', 'SERVER', 'Education', 'Teaching', 10000, 200)
 
-UPDATE Employee
-SET [Education] = 'Tutorial', YearlyIncome = 10000
-WHERE EmpID = 5 AND Sales =     300
+-- UPDATE Employee
+-- SET [Education] = 'Tutorial', YearlyIncome = 10000
+-- WHERE EmpID = 5 AND Sales =     300
+
+-- COMMIT TRANSACTION
 
 SELECT *
 FROM Employee
-
-COMMIT TRANSACTION
 
 

@@ -1,5 +1,5 @@
 -- CREATE DATABASE Chapter2
-Use Chapter2
+Use Year2
 
 -- CREATE TABLE Toys(
 --     ToyID INTEGER,
