@@ -1,4 +1,8 @@
-Chapter3
+Server name: sa
+Database name: Year2
+Password: Condaveat0975973667
+
+DB: Year2
 - Toys
 - ToysTest
 - Sale 
