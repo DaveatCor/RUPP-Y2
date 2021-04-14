@@ -80,6 +80,7 @@ void loop() {
     } else if (num2 != -1){
       display();
 
+      // First number = 0
       num2 *= 10;
       num2 = num2 + (customKey - 48);
       
