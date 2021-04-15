@@ -1,6 +1,6 @@
 #include<iostream>
 #include<conio.h>
-#include<iomani> // Header For Function manipulate
+#include<iomanip> // Header For Function manipulate
 using namespace std;
 
 main(){
@@ -12,6 +12,12 @@ main(){
 //	cout<<"26 to oct ="<<hex<<x;
 
 //	SetBase Convert Only 10, 8, 16 cannot convert to binary(2)
-	cout<<"28 to oct ="<<setbase(8)<<x;
+//	cout<<"28 to oct ="<<setbase(8)<<x;
+	
+	// Set character into space
+	cout<<setfill('&');
+	
+	//Add space into string
+	cout<<"X="<<setw(5)<<x;
 	getch();
 } 
