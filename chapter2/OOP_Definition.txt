@@ -1,0 +1,7 @@
+Encapsulation: is make you that "sensitive" data is hidden from users. refer (Getter, Setter)
+
+why encapsulation?
+- It is considered good practice to declare your class attributes as private
+- ensure better control of your data
+- you (or others) can change one part of the code without affecting other parts
+- increaed security of data
