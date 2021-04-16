@@ -16,5 +16,8 @@ USE Year2
 --     PhoneNumber CHAR(15) NOT NULL
 -- )
 
-SELECT Lastname & ',' + '' + Firstname & '/' + Areacode AS NamesAndAreacodes
+-- SELECT *
+-- FROM Committee2
+
+SELECT Lastname + ' ' + Firstname + ' ' + PhoneNumber AS NamesAndAreacodes
 FROM Committee2
