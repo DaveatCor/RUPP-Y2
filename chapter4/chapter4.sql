@@ -16,8 +16,13 @@ USE Year2
 --     PhoneNumber CHAR(15) NOT NULL
 -- )
 
--- SELECT *
+-- SELECT Lastname + ' ' + Firstname + ' ' + PhoneNumber AS NamesAndAreacodes
 -- FROM Committee2
 
-SELECT Lastname + ' ' + Firstname + ' ' + PhoneNumber AS NamesAndAreacodes
-FROM Committee2
+-- 4.3 CREAETING AN Alias
+-- SELECT Firstname, Lastname, Address AS "HomeAddress"
+-- FROM Committee2
+
+-- 4.4 THE DISTINCT KEYWORD 
+-- SELECT DISTINCT Price
+-- FROM Toys
