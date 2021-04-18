@@ -18,6 +18,7 @@ class Fri{
 		}
 		
 		friend void output(Fri f);
+		friend class B;
  };
  
  
@@ -26,6 +27,18 @@ class Fri{
  	cout<<"Y= "<<f.y<<"\t";
  	cout<<"Sum= "<<sum(f)<<endl;
  }
+ 
+ class B{
+ 	private:
+ 		int a, b;
+ 		Fri f;
+ 	public:
+ 		friend class Fri;
+ 		
+ 		void Display(){
+ 			
+		}
+ };
  
  void main(){
  	Fri b;
