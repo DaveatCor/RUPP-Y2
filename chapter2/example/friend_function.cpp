@@ -18,8 +18,14 @@ class Fri{
 		}
 		
 		friend void output(Fri f);
-		friend class B;
+		
+		friend void addValue(Fri &f);
  };
+ 
+ void addValue(Fri &f){
+ 	f.x = 5;
+ 	f.y = 10;
+ }
  
  
  void Fri::output(Fri f){
@@ -28,21 +34,22 @@ class Fri{
  	cout<<"Sum= "<<sum(f)<<endl;
  }
  
- class B{
- 	private:
- 		int a, b;
- 		Fri f;
- 	public:
- 		friend class Fri;
- 		
- 		void Display(){
- 			
-		}
- };
+// class B{
+// 	private:
+// 		int a, b;
+// 		Fri f;
+// 	public:
+//// 		friend class Fri;
+// 		
+// 		void Display(){
+// 			f.
+//		}
+// };
  
  void main(){
  	Fri b;
- 	b.input();
+// 	b.input();
+ 	addValue(b);
  	output(b);
  	getch();
  }
