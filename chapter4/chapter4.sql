@@ -26,3 +26,11 @@ USE Year2
 -- 4.4 THE DISTINCT KEYWORD 
 -- SELECT DISTINCT Price
 -- FROM Toys
+
+-- SELECT MAX(Price)
+-- FROM Toys
+-- WHERE Price < ( SELECT MAX(Price) FROM Toys)
+
+SELECT *
+FROM Toys
+WHERE ToyName <> 'ToyTrain1' AND ToyName <> 'ToyTrain2'
