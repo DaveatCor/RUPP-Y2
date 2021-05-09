@@ -3,7 +3,6 @@
 #include <string.h>
 using namespace std;
 
-
 class Person{
 	
 	private:
@@ -20,7 +19,7 @@ class Person{
 		
 		Person(int i, char* na, char s){
 			id = i;
-			strcpy(name, na);
+			//strcpy(name, na);
 			sex = s;
 		}
 		
@@ -29,7 +28,7 @@ class Person{
 			cout<<"Name: "; 
 			// Clear buffer for String
 			cin.seekg(0, ios::end); cin.clear();
-			// Input string
+//			// Input string
 			cin.get(name, 20);
 			cout<<"Sex: "; cin>>sex;
 		}
@@ -83,24 +82,24 @@ void sort (Student a[], int n){
 	/*Sort by name*/
 	for(int i = 0; i<n; i++)
 		for (int j=i+1; j<n; j++){
-			if (strcmp(a[i].name, a[j].name)){
-				temp = a[i];
-				a[i] = a[j];
-				a[j] = temp;
-			}
+//			if (stcmp(a[i].name, a[j].name)){
+//				temp = a[i];
+//				a[i] = a[j];
+//				a[j] = temp;
+//           }
 		}
 } 
 
 main(){
-//	Student st(5555, "Tep Bopha", 'F', 85);
+	//Student st(5555, "Tep Bopha", 'F', 85);
 	Student st;
 //	cout<<"Data of student: "<<endl;
 //	st.output();
 	
-	cout<<"Input data of Student: "<<endl;
-	st.input();
-	cout<<"Data of student: "<<endl;
-	st.output();
+	//cout<<"Input data of Student: "<<endl;
+//	st.input();
+//	cout<<"Data of student: "<<endl;
+//	st.output();
 	
 	
 //	int i;
