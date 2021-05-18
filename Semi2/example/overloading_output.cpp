@@ -13,8 +13,26 @@ class Rectangle {
                           width = w;
               }
               
+              // Unary operator
               Rectangle operator++(){
                         return Rectangle(++length, ++width);
+              }
+              
+              Rectangle operator++(int){
+                        return Rectangle(++length, ++width);
+              }
+              
+              // Output operator
+              friend ostream& operator<<(ostream &out, Rectangle &p){
+                     out<<p.length<<"\t\t"<<p.width<<"\t";
+                     return out;       
+              }
+              
+              // Input operator
+              
+              friend istream& operator>>(ostream &in, Rectangle &p){
+                     cout<<"Length="; in>>p.length;
+                     cout<<"Width="; in>>p.width;
               }
               
               void display(){
@@ -29,6 +47,10 @@ main(){
        rec.display();
        ++rec;  
        rec.display();
+       rec++;  
+       rec.display();
+       
+       cout<<rec;
        
        getch();
 }
