@@ -31,7 +31,7 @@ class Rectangle {
               // Input operator
               
               friend istream& operator>>(ostream &in, Rectangle &p){
-                     cout<<"Length="; in>>p.length;
+                     cout<<"Length="; in>>p;
                      cout<<"Width="; in>>p.width;
               }
               
