@@ -8,36 +8,41 @@
 # else :
 #     print("Odd")
 
+
 # ---------------------
 # 2) Convert String 
 
 # str = "Pyhton Programming Is FUN"
 # print(str.lower())
 
+
 # ---------------------
 # 3) Make Calculator
-sum = 0
 
-while(1):
+# sum = 0
 
-    num1 = input("Input first number: ")
-    num2 = input("Input second number: ")
-    string = input("Choose operator (+, -, *. /) = ")
-    print(string)
-    if (string != '+' and string != '-' and string != '*' and string != '/' ):
-        print('Wrong input')
-    else:
-        num1 = int(num1)
-        num2 = int(num2)
-        if (string == '+'): sum = num1 + num2
-        elif (string == '-'): sum = num1 - num2
-        elif (string == '*'): sum = num1 * num2
-        elif (string == '/'): sum = num1 / num2
-        print(sum)
-        break
+# while(1):
+
+#     num1 = input("Input first number: ")
+#     num2 = input("Input second number: ")
+#     string = input("Choose operator (+, -, *. /) = ")
+#     print(string)
+#     if (string != '+' and string != '-' and string != '*' and string != '/' ):
+#         print('Wrong input')
+#     else:
+#         num1 = int(num1)
+#         num2 = int(num2)
+#         if (string == '+'): sum = num1 + num2
+#         elif (string == '-'): sum = num1 - num2
+#         elif (string == '*'): sum = num1 * num2
+#         elif (string == '/'): sum = num1 / num2
+#         print(sum)
+#         break
+
 
 # ---------------------
 # 4) Find max of two number and n number
+
 # num1 = input("Input first number: ")
 # num2 = input("Input second number: ")
 
@@ -49,5 +54,25 @@ while(1):
 # else:
 #     max = num2
 #     print("Max is number2 = ", num2)
-    
+
+
+# ---------------------
+# 5) Find max of two number and n number
+
+while(1):
+    a = input("Input a: ")    
+    b = input("Input b: ")
+
+    x = 0.0
+
+    if (a == '0'):
+        print("No root!")
+    elif (b == '0'):
+        print("Many roots")
+    else:
+        x = -(int(b))/int(a)
+        print("x=-b/a = ", x)
+        break
+
+
 
