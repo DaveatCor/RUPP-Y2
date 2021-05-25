@@ -1,0 +1,6 @@
+class MyClass:
+    def sum(self, num1= 0, num2 = 0):
+        print(num1+num2)
+
+p1 = MyClass()
+p1.sum(2, 3)
