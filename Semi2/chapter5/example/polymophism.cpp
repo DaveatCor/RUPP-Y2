@@ -7,7 +7,7 @@ class Shape {
       public:
              enum objectType{RECTANGLE, CIRCLE, TRIANGLE};
              virtual void input()=0;
-             virtual void ouput()=0;
+             virtual void output()=0;
              virtual float area()=0;
              virtual objectType object() = 0;
 };
@@ -17,7 +17,7 @@ class Rectangle:public Shape{
              float length, width;
       public:
 
-             Rectangle(float l=0, float w){
+             Rectangle(float l, float w){
                              length = l;
                              width = w;
              }
@@ -77,10 +77,32 @@ class Triangle:public Shape {
              virtual objectType object(){return TRIANGLE;}
 }; 
 
+// Date 03/Jun/21
+float totalArea(Shape *a[], int n){
+      float s;
+      for(int i = 0; i < n; i++){
+              // Arrow Keyword Use With Pointer
+              s += a[i]->area();
+      }
+      return s;
+}
+
+// Date 03/Jun/21
+float maxArea(Shape *a[], int n){
+      float max = a[0]->area();
+      for(int i = 1; i < n-1; i++){
+              // Arrow Keyword Use With Pointer
+              if (max < a[i]->area()){
+                 max = a[i]->area();
+              }
+      }
+      return max;
+}
+
 main(){
        Shape *a[8] = {
-             new Rectangle(20, 10),
              new Circle(35),
+             new Rectangle(20, 10),
              new Triangle(13, 9, 12),
              new Circle(78),
              new Rectangle(40, 25),
@@ -89,8 +111,15 @@ main(){
              new Rectangle(35, 13)
        };
        
-       for(int i =0; i<8; i++)
-               if(a[i]->object()==Shape::TRIANGLE)
-                a[i]->output();
+       for(int i =0; i<8; i++){
+//               if(a[i]->object()==Shape::TRIANGLE){
+               cout<<a[i]->area();
+               cout<<endl;
+               }
+               
+       cout<<"Total area: "<<totalArea(a, 8);
+       
+       // Find Max
+       cout<<"\nMax area: "<<maxArea(a, 8);
        getch();
 }
