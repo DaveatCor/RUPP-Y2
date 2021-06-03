@@ -12,12 +12,13 @@ class Shape {
              virtual objectType object() = 0;
 };
 
-class Rectangle:public Shape{
+class MyRectangle:public Shape{
+                       
       private:
              float length, width;
       public:
 
-             Rectangle(float l, float w){
+             MyRectangle(float l = 0, float w=0){
                              length = l;
                              width = w;
              }
@@ -35,7 +36,8 @@ class Rectangle:public Shape{
              virtual objectType object(){return RECTANGLE;}
 };
 
-class Circle:public Shape {
+class Circle:public Shape{
+                    
       private:
               float r;
               
@@ -53,6 +55,7 @@ class Circle:public Shape {
 };
 
 class Triangle:public Shape {
+                      
       float a, b, c;
       public:
              Triangle(float a1=0, float b1=0, float c1=0) {
@@ -99,16 +102,35 @@ float maxArea(Shape *a[], int n){
       return max;
 }
 
+void inputAll(Shape *a[], int n){
+     char select;
+     for(int i = 0; i<n; i++){
+             cout<<"Rectangle(r), Circle(c), Triangle(t): "; cin>>select;
+             switch(select){
+                            
+                            case 'r': a[i] = new MyRectangle();
+//                                      a[i]->input();
+                                      break;
+                            case 'c': a[i] = new Circle();
+                                      a[i]->input();
+                                      break;
+                            case 't': a[i] = new Triangle();
+                                      a[i]->input();
+                                      break;
+             }
+     }                    
+}
+
 main(){
        Shape *a[8] = {
              new Circle(35),
-             new Rectangle(20, 10),
+             new MyRectangle(20, 10),
              new Triangle(13, 9, 12),
              new Circle(78),
-             new Rectangle(40, 25),
+             new MyRectangle(40, 25),
              new Circle(45),
              new Triangle(19, 25, 14),
-             new Rectangle(35, 13)
+             new MyRectangle(35, 13)
        };
        
        for(int i =0; i<8; i++){
