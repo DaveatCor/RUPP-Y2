@@ -109,7 +109,7 @@ void inputAll(Shape *a[], int n){
              switch(select){
                             
                             case 'r': a[i] = new MyRectangle();
-//                                      a[i]->input();
+                                      a[i]->input();
                                       break;
                             case 'c': a[i] = new Circle();
                                       a[i]->input();
@@ -122,22 +122,25 @@ void inputAll(Shape *a[], int n){
 }
 
 main(){
-       Shape *a[8] = {
-             new Circle(35),
-             new MyRectangle(20, 10),
-             new Triangle(13, 9, 12),
-             new Circle(78),
-             new MyRectangle(40, 25),
-             new Circle(45),
-             new Triangle(19, 25, 14),
-             new MyRectangle(35, 13)
-       };
+       //Shape *a[8] = {
+//             new Circle(35),
+//             new MyRectangle(20, 10),
+//             new Triangle(13, 9, 12),
+//             new Circle(78),
+//             new MyRectangle(40, 25),
+//             new Circle(45),
+//             new Triangle(19, 25, 14),
+//             new MyRectangle(35, 13)
+//       };
        
-       for(int i =0; i<8; i++){
+       //for(int i =0; i<8; i++){
 //               if(a[i]->object()==Shape::TRIANGLE){
-               cout<<a[i]->area();
-               cout<<endl;
-               }
+//               cout<<a[i]->area();
+//               cout<<endl;
+//               }
+       Shape *a[8];
+       
+       inputAll(a, 8);
                
        cout<<"Total area: "<<totalArea(a, 8);
        
