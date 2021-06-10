@@ -7,9 +7,19 @@ using namespace std;
 
 class Person{
              
+             // Date 10/Jun/21 
+             public:     
+                     enum objectType{
+                          PERSON,
+                          SALARY_INCOME,
+                          WAGE_INCOME,
+                          SALARY_WAGE_INCOME
+                     };
+             
              private:
                      int id; char name[20];
              public:
+             
                      Person(int i = 0, char *n = "abc"){
                                 id = i;
                                 strcpy(name, n);
@@ -19,7 +29,7 @@ class Person{
                      
                      virtual void ownerOutput(){}
                      
-                     void input(){
+                     virtual void input(){
                              cout<<"Id: "; cin>>id;
                              cout<<"Name: "; 
                              cin.seekg(0, ios::end); 
@@ -28,11 +38,14 @@ class Person{
                              ownerInput();
                      }
                      virtual void output(){
-                             cout<<"Id= "<<id;
+                             cout<<"\nId= "<<id;
                              cout<<"\nName= "<<name;
                              ownerOutput();
                      }
                      
+                     virtual objectType object(){
+                             return PERSON;
+                     }
                      
 };
 
@@ -53,6 +66,10 @@ class Salary_Income:public virtual Person{
                      
                      virtual float income(){
                              return salary*(1-0.05);
+                     }
+                     
+                     virtual objectType object(){
+                             return SALARY_INCOME;
                      }
                      
                      
@@ -79,6 +96,10 @@ class Wage_Income:public virtual Person{ // Use Virtual
                      
                      virtual float income(){
                              return hour*rate;
+                     }
+                     
+                     virtual objectType object(){
+                             return WAGE_INCOME;
                      }
                      
                      
@@ -117,22 +138,54 @@ class Salary_Wage_Income:public Salary_Income, public Wage_Income{ // Use Virtua
                      }
                      
                      
+                     virtual objectType object(){
+                             return SALARY_WAGE_INCOME;
+                     }
+                     
 };
 
+void inputAll(Person *a[], int n){
+     char select;
+     for (int i = 0; i < n; i++){
+         cout<<"Person(p), Salary_Income(s), Wage_Income(w), Salary_Wage_Income(b)";
+         cin>>select;
+         switch (select){
+                case 'p': a[i] = new Person();
+                          a[i]->input();
+                          break;
+                case 's': a[i] = new Salary_Income();
+                          a[i]->ownerInput();
+                          break;
+                case 'w': a[i] = new Wage_Income();
+                          a[i]->ownerInput();
+                          break;
+                case 'b': a[i] = new Salary_Wage_Income();
+                          a[i]->ownerInput();
+                          break;
+         }
+     }
+}
+
 main(){
-      Person *a[8] = {
-             new Person(1, "Dara"),
-             new Salary_Income(2, "Chan", 300),
-             new Wage_Income(3, "Bopha", 75, 5),
-             new Salary_Income(4, "Veasna", 600),
-             new Salary_Wage_Income(5, "Ratha", 200, 57, 7),
-             new Wage_Income(6, "Bunna", 82, 6),
-             new Person(7, "Vutha"),
-             new Salary_Income(6, "Mary", 450)
-      };
+      //Person *a[8] = {
+//             new Person(1, "Dara"),
+//             new Salary_Income(2, "Chan", 300),
+//             new Wage_Income(3, "Bopha", 75, 5),
+//             new Salary_Income(4, "Veasna", 600),
+//             new Salary_Wage_Income(5, "Ratha", 200, 57, 7),
+//             new Wage_Income(6, "Bunna", 82, 6),
+//             new Person(7, "Vutha"),
+//             new Salary_Income(6, "Mary", 450)
+//      };
+
+        Person *a[100]; int n;
+        cout<<"Number of people: "; cin>> n;
+        inputAll(a, n);
       
-      for(int i = 0; i< 8; i++){
-              a[i]->output();
+      for(int i = 0; i< n; i++){
+              if (a[i]->object() == Person::SALARY_INCOME){
+                            a[i]->output();
+              }
       }
       
       getch();
