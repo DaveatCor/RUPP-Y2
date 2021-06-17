@@ -3,7 +3,10 @@
 using namespace std;
 
 template <class Dara>
-void swap(Dara &a, Dara &b){
+
+// We need to add const keyword to prevent error occur
+// Error: call of overloaded function is ambiguous
+void swap(const Dara &a, const Dara &b){
 	Dara temp;
 	temp = a; 
 	a = b;
@@ -24,4 +27,6 @@ int main(){
 	cout<<"A= "<<a<<"\tb= "<<b<<endl;
 	cout<<"X= "<<x<<"\tY= "<<y<<endl;
 	cout<<"Ch1= "<<ch1<<"\tCh2= "<<ch2<<endl;
+	
+	getch();
 }
