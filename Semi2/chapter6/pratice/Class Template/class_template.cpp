@@ -65,38 +65,38 @@ class Worker{
 		}
 };
 
-template<const class T1>
+template<class T1>
 class Show{
 	private:
 		T1 x;
-		T2 y;
+		T1 y;
 	public:
 		void input();
-		void ouput();
+		void output();
 		void sum(){
 			return (x+y);
 		}
 };
 
-template<const class T1>
+template<class T1>
 void Show<T1>::input(){
-	cout<<"Input x: "; cin>>Show::x;
-	cout<<"Input y: "; cin>>Show::y;
+	cout<<"Input x: "; cin>>x;
+	cout<<"Input y: "; cin>>y;
 }
 
-template<const class T1>
+template<class T1>
 void Show<T1>::output(){
-	cout<<"X: "<<Show::x;
-	cout<<"\nY: "<<Show::y;
+	cout<<"X: "<<x;
+	cout<<"\nY: "<<y;
 	cout<<"\nSum: "<<sum();
 }
 
-void main(){
+main(){
 	
-	Show<int>obj1; obj1.input(); obj1.ouput();
-	Show<float>obj2; obj2.input(); obj2.ouput();
-	Show<Rectangle>obj3; obj3.input(); obj3.ouput();
-	Show<Worker>obj4; obj4.input(); obj4.ouput();
+	Show<int>obj1; obj1.input(); obj1.output();
+	Show<float>obj2; obj2.input(); obj2.output();
+	Show<Rectangle>obj3; obj3.input(); obj3.output();
+	Show<Worker>obj4; obj4.input(); obj4.output();
 	
 	getch();
 }
