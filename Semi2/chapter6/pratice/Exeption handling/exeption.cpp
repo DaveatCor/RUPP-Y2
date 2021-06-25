@@ -20,6 +20,7 @@ float quote(int a, int b){
 
 main(){
 	int x, y, result;
+	
 	while(1){
 		cout<<"input x and y: "; cin>>x>>y;
 		try {
