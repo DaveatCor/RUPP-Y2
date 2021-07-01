@@ -22,7 +22,7 @@ class Rectangle{
 			cout<<"Width: "; is>>r.w;
 		}
 			
-		friend ostream& operator>>(ostream& os, Rectangle& r){
+		friend ostream& operator<<(ostream& os, Rectangle& r){
 			os<<"Length: "<<r.l;
 			os<<"\nWdith: "<<r.w;
 		}
@@ -73,7 +73,7 @@ class Show{
 	public:
 		void input();
 		void output();
-		void sum(){
+		int sum(){
 			return (x+y);
 		}
 };
@@ -88,7 +88,7 @@ template<class T1>
 void Show<T1>::output(){
 	cout<<"X: "<<x;
 	cout<<"\nY: "<<y;
-	cout<<"\nSum: "<<sum();
+	cout<<"\nSum: "<<sum()<<endl;
 }
 
 main(){
