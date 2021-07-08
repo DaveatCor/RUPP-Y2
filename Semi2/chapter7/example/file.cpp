@@ -14,6 +14,7 @@ int main(){
 	while(1){
 		ch = getchar();
 		if(ch=='#') break;
+		f<<ch;
 		cout<<ch;
 	}
 	
@@ -25,5 +26,4 @@ int main(){
 //	}
 	
 	f.close();
-	getch();
 }
