@@ -1,0 +1,5 @@
+﻿1. enable
+2. configure
+3. interface s0/0/0
+4. ip add 192.168.20.225 255.255.255.252
+5. no shutdown : to keep router on 
