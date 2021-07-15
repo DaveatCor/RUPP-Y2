@@ -1,1 +1,5 @@
 ﻿Enum is a keyword that we use to create new DataType 
+
+Chapter 7:
+- randomize();
+
