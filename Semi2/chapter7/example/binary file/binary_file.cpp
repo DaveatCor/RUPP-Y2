@@ -5,7 +5,8 @@
 using namespace std;
 
 main(){
-	int n, x;
+	
+	int n, x[150];
 	char ch = 'h';
 	
 	ofstream f("myfile.bin", ios::binary);
@@ -25,9 +26,8 @@ main(){
 
 //	f.write( (char*)&a, sizeof(a) );
 //	f.write( (char*)&a, sizeof(float) ); 
+
 	f.write( (char*)&ch, sizeof(ch) );
-	
-	
 	
 	f.close();
 	getch();
