@@ -6,7 +6,7 @@ using namespace std;
 
 main(){
 	
-	int n, x[150];
+	int n;
 	char ch = 'h';
 	
 	ofstream f("myfile.bin", ios::binary);
