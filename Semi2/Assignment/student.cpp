@@ -10,24 +10,31 @@ struct Student
     float score;
     struct Student *next;
     
-}* head;
+};
 
-void insert(struct Student *std)
+struct Student *head = NULL;
+
+struct Student* insert(struct Student *std, struct Student* temp)
 {
-    
-//    struct Student * student = (struct Student *) malloc(sizeof(struct Student));
     
     if(head==NULL){
         // if head is NULL
-        // set student as the new head
         head = std;
+        head->next = NULL;
+        
+        temp = head;
     }
     else{
+    	printf("Second node");
         // if list is not empty
         // insert student in beginning of head
-        std->next = head;
-        head = std;
+		std->next = NULL;
+		
+		temp->next = std;
+		temp = temp->next;
+	
     }
+    return temp;
     
 }
 
@@ -114,34 +121,45 @@ void Delete(int id){
     
 }
 
-void write(struct Student st){
+void write(){
 	
-	FILE *fptr = fopen("myfile", "w");
+	FILE *fptr = fopen("myfile", "a");
+	
+	struct Student* temp = head;
 
 	if (fptr == NULL){
 		printf("File cannot open");
 		exit(0);
 	}
 	
-	fwrite(&st, sizeof(st), 1, fptr);
+	while(temp != NULL){
+		fwrite(&temp, sizeof(struct Student), 1, fptr);
+		temp = temp->next;
+	}
 	
 	fclose(fptr);	
 }
 
-struct Student read(){
+struct Student* read(struct Student* temp){
 
-	FILE *fptr = fopen("myfile", "a");
+	FILE *fptr = fopen("myfile", "r");
 
-	struct Student st;
+	struct Student* std;
 
 	if (fptr == NULL){
 		printf("File cannot open");
-		exit(0);
+		return NULL;
 	}
+	fread(&std, sizeof(struct Student), 1, fptr);
 	
-	fread(&st, sizeof(st), 1, fptr);
+	while(std != EOF){
+		
+		temp = insert(std, temp);
+	}
 
-	return st;	
+	fclose(fptr);
+	
+	return temp;	
 }
 
 void count(){
@@ -155,32 +173,29 @@ void count(){
     printf("\n Total no. of student is %d",count);
 }
 
-void display(struct Student *st)
+void display()
 {
-//    if (st == NULL){
-//	}
-//	else {
-//		struct Student * temp = head;
-//	}
 
-    struct Student * temp = head;
+    struct Student * temp = head; 
+	
+	if (temp == NULL) printf("\nYou have no data!\n");  
+    
     while(temp!=NULL){
     
         printf("id: %d\n", temp->id);
         printf("Name: %s\n", temp->name);
         printf("score: %0.4f\n\n", temp->score);
         temp = temp->next;
-        
     }
 }
 
 
 int main() {
-    head = NULL;
     
     int choice;
     
-    struct Student std;
+    struct Student* std;
+    struct Student* temp;
     
     // Label
     timeTravel:
@@ -205,37 +220,39 @@ int main() {
     switch (choice)
     {
         case 1:
+        	std = (struct Student*)malloc(sizeof(struct Student*));
             printf("Enter id: ");
-            scanf("%d", &std.id);
+            scanf("%d", &std->id);
             fflush(stdin);
             printf("Enter name: ");
-            gets(std.name);
+            gets(std->name);
             printf("Enter score: ");
-            scanf("%f", &std.score);
-            insert(&std);
+            scanf("%f", &std->score);
+            temp = insert(std, temp);
             break;
              
         case 2:
             printf("Enter id to search: ");
-            scanf("%d", &std.id);
-            search(std.id);
+            scanf("%d", &std->id);
+            search(std->id);
             break;
             
         case 3:
             printf("Enter id to delete: ");
-            scanf("%d", &std.id);
-            Delete(std.id);
+            scanf("%d", &std->id);
+            Delete(std->id);
             break;
             
         case 4:
             printf("Enter id to update: ");
-            scanf("%d", &std.id);
-            update(std.id);
+            scanf("%d", &std->id);
+            update(std->id);
             break;
             
         case 5:
-        	std = read();
-            display(&std);
+//        	temp = read(temp);
+//        	std = temp;
+            display();
             break;
             
         case 6:
@@ -243,7 +260,7 @@ int main() {
             break;
             
         case 7:
-        	write(std);
+        	write();
         	printf("Successfully save file\n");
         	break;
         	
