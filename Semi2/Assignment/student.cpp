@@ -2,6 +2,7 @@
 #include<conio.h>
 #include<string.h>
 #include<stdlib.h>
+#include<dos.h>
 
 struct Student
 {
@@ -45,7 +46,7 @@ void search(int id)
         if(temp->id==id){
             printf("Id: %d\n", temp->id);
             printf("Name: %s\n", temp->name);
-            printf("Score: %0.4f\n", temp->score);
+            printf("Score: %.2f\n", temp->score);
             return;
         }
         temp = temp->next;
@@ -121,47 +122,6 @@ void Delete(int id){
     
 }
 
-void write(){
-	
-	FILE *fptr = fopen("myfile", "a");
-	
-	struct Student* temp = head;
-
-	if (fptr == NULL){
-		printf("File cannot open");
-		exit(0);
-	}
-	
-	while(temp != NULL){
-		fwrite(&temp, sizeof(struct Student), 1, fptr);
-		temp = temp->next;
-	}
-	
-	fclose(fptr);	
-}
-
-struct Student* read(struct Student* temp){
-
-	FILE *fptr = fopen("myfile", "r");
-
-	struct Student* std;
-
-	if (fptr == NULL){
-		printf("File cannot open");
-		return NULL;
-	}
-	fread(&std, sizeof(struct Student), 1, fptr);
-	
-	while(std != EOF){
-		
-		temp = insert(std, temp);
-	}
-
-	fclose(fptr);
-	
-	return temp;	
-}
-
 void count(){
     struct Student * temp = head;
     int count=0;
@@ -170,7 +130,7 @@ void count(){
             temp = temp->next;
             count++;
     }
-    printf("\n Total no. of student is %d",count);
+    printf("\n Total of student is %d\n",count);
 }
 
 void display()
@@ -184,11 +144,61 @@ void display()
     
         printf("id: %d\n", temp->id);
         printf("Name: %s\n", temp->name);
-        printf("score: %0.4f\n\n", temp->score);
+        printf("score: %0.2f\n\n", temp->score);
         temp = temp->next;
     }
 }
 
+void write(FILE* fptr){
+	
+	struct Student * temp  = (struct Student*)malloc(sizeof(struct Student));
+    temp = head;
+	struct Student *tmp = head;
+	while(tmp!=NULL)
+    {
+		fprintf(fptr, "%d %s %.2f ", tmp->id, tmp->name, tmp->score);
+        
+   		printf("He%0.1f", tmp->score);
+        tmp = tmp->next;
+    }
+
+	fclose(fptr);
+}
+
+void read(FILE *fptr){
+	
+	struct Student* temp = (struct Student*)malloc(sizeof(struct Student));
+	struct Student* tp = (struct Student*)malloc(sizeof(struct Student));
+	
+	if (fptr == NULL){
+		printf("File not found");
+	}
+	
+	while(fscanf(fptr, "%d %s %f ", &temp->id, temp->name, &temp->score) != EOF)
+    {
+        
+        if(head == NULL)
+        {
+            head = temp;
+            head->next = NULL;
+            
+            tp = head;
+        }
+        else
+        {
+        	tp = temp;
+        	
+        	tp->next = NULL;
+	        tp = tp->next;
+	        
+        }
+        
+    }
+    
+    display();
+
+	fclose(fptr);
+}
 
 int main() {
     
@@ -196,6 +206,9 @@ int main() {
     
     struct Student* std;
     struct Student* temp;
+    
+	FILE *wr = fopen("student", "a");
+	FILE *re = fopen("student", "r");
     
     // Label
     timeTravel:
@@ -208,6 +221,7 @@ int main() {
 		"5 Display all student details\n"
 		"6 Count number of students\n"
 		"7 Save file\n"
+		"8 Read file\n"
 		"0 Exit program"
 	);
 	
@@ -232,26 +246,27 @@ int main() {
             break;
              
         case 2:
+        	std = (struct Student*)malloc(sizeof(struct Student*));
             printf("Enter id to search: ");
             scanf("%d", &std->id);
             search(std->id);
             break;
             
         case 3:
+        	std = (struct Student*)malloc(sizeof(struct Student*));
             printf("Enter id to delete: ");
             scanf("%d", &std->id);
             Delete(std->id);
             break;
             
         case 4:
+        	std = (struct Student*)malloc(sizeof(struct Student*));
             printf("Enter id to update: ");
             scanf("%d", &std->id);
             update(std->id);
             break;
             
         case 5:
-//        	temp = read(temp);
-//        	std = temp;
             display();
             break;
             
@@ -260,12 +275,14 @@ int main() {
             break;
             
         case 7:
-        	write();
+        	write(wr);
         	printf("Successfully save file\n");
         	break;
+        case 8:
+        	read(re);
         	
         case 0:
-        	printf("Thank you for using our program");
+        	//printf("Thank you for using our program");
         	break;
         	
         default:
