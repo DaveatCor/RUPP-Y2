@@ -2,6 +2,7 @@
 #include<conio.h>
 #include<string.h>
 #include<stdlib.h>
+#include<dos.h>
 
 struct Student
 {
@@ -10,24 +11,31 @@ struct Student
     float score;
     struct Student *next;
     
-}* head;
+};
 
-void insert(struct Student *std)
+struct Student *head = NULL;
+
+struct Student* insert(struct Student *std, struct Student* temp)
 {
-    
-//    struct Student * student = (struct Student *) malloc(sizeof(struct Student));
     
     if(head==NULL){
         // if head is NULL
-        // set student as the new head
         head = std;
+        head->next = NULL;
+        
+        temp = head;
     }
     else{
+    	printf("Second node");
         // if list is not empty
         // insert student in beginning of head
-        std->next = head;
-        head = std;
+		std->next = NULL;
+		
+		temp->next = std;
+		temp = temp->next;
+	
     }
+    return temp;
     
 }
 
@@ -38,7 +46,7 @@ void search(int id)
         if(temp->id==id){
             printf("Id: %d\n", temp->id);
             printf("Name: %s\n", temp->name);
-            printf("Score: %0.4f\n", temp->score);
+            printf("Score: %.2f\n", temp->score);
             return;
         }
         temp = temp->next;
@@ -114,36 +122,6 @@ void Delete(int id){
     
 }
 
-void write(struct Student st){
-	
-	FILE *fptr = fopen("myfile", "w");
-
-	if (fptr == NULL){
-		printf("File cannot open");
-		exit(0);
-	}
-	
-	fwrite(&st, sizeof(st), 1, fptr);
-	
-	fclose(fptr);	
-}
-
-struct Student read(){
-
-	FILE *fptr = fopen("myfile", "a");
-
-	struct Student st;
-
-	if (fptr == NULL){
-		printf("File cannot open");
-		exit(0);
-	}
-	
-	fread(&st, sizeof(st), 1, fptr);
-
-	return st;	
-}
-
 void count(){
     struct Student * temp = head;
     int count=0;
@@ -152,35 +130,85 @@ void count(){
             temp = temp->next;
             count++;
     }
-    printf("\n Total no. of student is %d",count);
+    printf("\n Total of student is %d\n",count);
 }
 
-void display(struct Student *st)
+void display()
 {
-//    if (st == NULL){
-//	}
-//	else {
-//		struct Student * temp = head;
-//	}
 
-    struct Student * temp = head;
+    struct Student * temp = head; 
+	
+	if (temp == NULL) printf("\nYou have no data!\n");  
+    
     while(temp!=NULL){
     
         printf("id: %d\n", temp->id);
         printf("Name: %s\n", temp->name);
-        printf("score: %0.4f\n\n", temp->score);
+        printf("score: %0.2f\n\n", temp->score);
         temp = temp->next;
-        
     }
 }
 
+void write(FILE* fptr){
+	
+	struct Student * temp  = (struct Student*)malloc(sizeof(struct Student));
+    temp = head;
+	struct Student *tmp = head;
+	while(tmp!=NULL)
+    {
+		fprintf(fptr, "%d %s %.2f ", tmp->id, tmp->name, tmp->score);
+        
+   		printf("He%0.1f", tmp->score);
+        tmp = tmp->next;
+    }
+
+	fclose(fptr);
+}
+
+void read(FILE *fptr){
+	
+	struct Student* temp = (struct Student*)malloc(sizeof(struct Student));
+	struct Student* tp = (struct Student*)malloc(sizeof(struct Student));
+	
+	if (fptr == NULL){
+		printf("File not found");
+	}
+	
+	while(fscanf(fptr, "%d %s %f ", &temp->id, temp->name, &temp->score) != EOF)
+    {
+        
+        if(head == NULL)
+        {
+            head = temp;
+            head->next = NULL;
+            
+            tp = head;
+        }
+        else
+        {
+        	tp = temp;
+        	
+        	tp->next = NULL;
+	        tp = tp->next;
+	        
+        }
+        
+    }
+    
+    display();
+
+	fclose(fptr);
+}
 
 int main() {
-    head = NULL;
     
     int choice;
     
-    struct Student std;
+    struct Student* std;
+    struct Student* temp;
+    
+	FILE *wr = fopen("student", "a");
+	FILE *re = fopen("student", "r");
     
     // Label
     timeTravel:
@@ -193,6 +221,7 @@ int main() {
 		"5 Display all student details\n"
 		"6 Count number of students\n"
 		"7 Save file\n"
+		"8 Read file\n"
 		"0 Exit program"
 	);
 	
@@ -205,37 +234,40 @@ int main() {
     switch (choice)
     {
         case 1:
+        	std = (struct Student*)malloc(sizeof(struct Student*));
             printf("Enter id: ");
-            scanf("%d", &std.id);
+            scanf("%d", &std->id);
             fflush(stdin);
             printf("Enter name: ");
-            gets(std.name);
+            gets(std->name);
             printf("Enter score: ");
-            scanf("%f", &std.score);
-            insert(&std);
+            scanf("%f", &std->score);
+            temp = insert(std, temp);
             break;
              
         case 2:
+        	std = (struct Student*)malloc(sizeof(struct Student*));
             printf("Enter id to search: ");
-            scanf("%d", &std.id);
-            search(std.id);
+            scanf("%d", &std->id);
+            search(std->id);
             break;
             
         case 3:
+        	std = (struct Student*)malloc(sizeof(struct Student*));
             printf("Enter id to delete: ");
-            scanf("%d", &std.id);
-            Delete(std.id);
+            scanf("%d", &std->id);
+            Delete(std->id);
             break;
             
         case 4:
+        	std = (struct Student*)malloc(sizeof(struct Student*));
             printf("Enter id to update: ");
-            scanf("%d", &std.id);
-            update(std.id);
+            scanf("%d", &std->id);
+            update(std->id);
             break;
             
         case 5:
-        	std = read();
-            display(&std);
+            display();
             break;
             
         case 6:
@@ -243,12 +275,14 @@ int main() {
             break;
             
         case 7:
-        	write(std);
+        	write(wr);
         	printf("Successfully save file\n");
         	break;
+        case 8:
+        	read(re);
         	
         case 0:
-        	printf("Thank you for using our program");
+        	//printf("Thank you for using our program");
         	break;
         	
         default:
