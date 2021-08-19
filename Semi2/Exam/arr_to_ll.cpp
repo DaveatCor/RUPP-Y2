@@ -15,13 +15,14 @@ struct Node* insert(struct Node* node, struct Node* tmp){
     if (head == NULL){
         head = node;
         head->next = NULL;
-        
         tmp = head;
+		
     } else {
+        node->next = NULL;
+        tmp->next = node;
         
-        tmp = node;
-        tmp->next = NULL;
         tmp = tmp->next;
+        
     }
     
     return tmp;
@@ -59,8 +60,9 @@ int main()
     
     int n = sizeof(arr) /  sizeof(arr[0]);
     
-    arrayToLL(arr, n, tmp);
+    tmp = arrayToLL(arr, n, tmp);
 
+	getch();
     traverse();
 
     return 0;
